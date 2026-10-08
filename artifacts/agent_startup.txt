@@ -1,0 +1,2 @@
+RemoteOps Agent for IT24103000 listening on TCP port 9410
+Storage: ./agentfiles/IT24103000 | SID: 0003 | Token: OPS-3000

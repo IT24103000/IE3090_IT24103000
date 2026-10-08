@@ -1,0 +1,15 @@
+Connected to RemoteOps Agent 127.0.0.1:9410 (SID:0003 expected).
+Commands:
+  auth                         Authenticate with the personalised token
+  sysinfo                      Request CPU, memory, and uptime
+  listproc                     Request a process snapshot
+  exec DATE|UPTIME|DISKFREE|HOSTNAME|WHOAMI
+  put <local_path> [remote_name]
+  get <remote_name> [local_path]
+  monitor start <udp_port>
+  monitor stop
+  quit
+remoteops> AGENT: OK AUTHENTICATED SID:0003
+remoteops> AGENT: OK SYSINFO 0.05 392 4652 SID:0003
+remoteops> AGENT: OK EXEC_RESULT DESKTOP-THH9NK7 SID:0003
+remoteops> AGENT: OK BYE SID:0003

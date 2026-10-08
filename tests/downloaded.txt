@@ -1,0 +1,3 @@
+RemoteOps byte-for-byte transfer test for IT24103000.
+Line two keeps the test data multi-line and reproducible.
+

@@ -1,0 +1,11 @@
+# Structured Reflection
+
+I used Codex during the Part 1 implementation to help break down the assignment brief, calculate the personalised protocol values, draft the socket-programming structure, and review debugging errors. The most useful part was turning the long protocol table into a checklist of exact commands, response formats, session tags, file-byte counts, and UDP behaviour. This helped me focus on the fact that TCP is a byte stream and does not automatically preserve command boundaries.
+
+The AI was useful for producing initial boilerplate for sockets, threads, buffered reads, file transfers, and logging. However, the first implementation was not automatically correct. During testing, the process-listing result was empty even though processes were running. The code was changed to enumerate Linux /proc directly. A second issue was found in the MONITOR START command because the prefix length was wrong by one character. The integration test exposed this because the Agent returned UNKNOWN_COMMAND. I corrected the prefix length and retested the UDP stream. These mistakes showed me that generated code must be compiled, observed, and checked against the actual protocol.
+
+I also changed the design so EXEC does not pass arbitrary input to a shell. DATE, UPTIME, DISKFREE, HOSTNAME, and WHOAMI are handled through direct C/POSIX functions. Filenames are checked before storage so that a Controller cannot use path traversal. The buffered reader was kept because it is needed to handle partial lines and raw file bytes correctly.
+
+The main thing I learned about network programming is that a successful connection is only the beginning. The application must define framing, authentication state, exact byte counts, error responses, clean shutdown, and concurrency behaviour. I also learned that each client session needs independent state, while shared resources such as the log file need synchronisation. Before the viva, I need to be able to explain the accept loop, client thread, buffered reader, file-transfer loops, monitor worker, and the reason for every personalised value.
+
+I will update this reflection with any additional changes I make after running the program in the department Linux environment. I will not submit any part of the implementation that I cannot explain.

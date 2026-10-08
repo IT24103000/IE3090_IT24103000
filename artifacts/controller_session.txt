@@ -1,0 +1,27 @@
+Connected to RemoteOps Agent 127.0.0.1:9410 (SID:0003 expected).
+Commands:
+  auth                         Authenticate with the personalised token
+  sysinfo                      Request CPU, memory, and uptime
+  listproc                     Request a process snapshot
+  exec DATE|UPTIME|DISKFREE|HOSTNAME|WHOAMI
+  put <local_path> [remote_name]
+  get <remote_name> [local_path]
+  monitor start <udp_port>
+  monitor stop
+  quit
+remoteops> AGENT: OK AUTHENTICATED SID:0003
+remoteops> AGENT: OK SYSINFO 0.05 396 4648 SID:0003
+remoteops> AGENT: OK PROCS 1/systemd,2/init-systemd(De,3/init-watcher,8/init,90/systemd-udevd,138/cron,144/dbus-daemon,183/agetty,188/SessionLeader,189/Relay(190),190/bash,227/login,239/systemd,241/(sd-pam),252/bash,280/SessionLeader,281/Relay(282),282/bash,1827/systemd-journal,1866/SessionLeader,1868/Relay(1874),1874/bash,2180/systemd-logind,2272/bash,2288/agent_000,2290/bash,2291/controller_000,2292/sleep SID:0003
+remoteops> AGENT: OK EXEC_RESULT 2026-10-07 22:20:13 SID:0003
+remoteops> AGENT: OK EXEC_RESULT 4648 SID:0003
+remoteops> AGENT: OK EXEC_RESULT 3604 MB free SID:0003
+remoteops> AGENT: OK EXEC_RESULT DESKTOP-THH9NK7 SID:0003
+remoteops> AGENT: OK EXEC_RESULT mmr SID:0003
+remoteops> AGENT: ERR 002 COMMAND_NOT_ALLOWED SID:0003
+remoteops> AGENT: OK FILE_RECEIVED uploaded_evidence.txt SID:0003
+remoteops> AGENT: OK FILE_RECEIVED_LOCAL tests/downloaded_evidence.txt 113 bytes SID:0003
+remoteops> UDP: SYSINFO 0.05 396 4649 SID:0003
+AGENT: OK MONITOR_STARTED SID:0003
+remoteops> UDP: SYSINFO 0.05 393 4651 SID:0003
+AGENT: OK MONITOR_STOPPED SID:0003
+remoteops> AGENT: OK BYE SID:0003

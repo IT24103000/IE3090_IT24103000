@@ -1,0 +1,25 @@
+CC := gcc
+CFLAGS := -std=c11 -Wall -Wextra -Wpedantic -O2
+LDFLAGS := -pthread
+
+AGENT := agent_000
+CONTROLLER := controller_000
+
+.PHONY: all clean run-agent run-controller
+
+all: $(AGENT) $(CONTROLLER)
+
+$(AGENT): agent_000.c src/agent_000.c
+	$(CC) $(CFLAGS) -o $@ agent_000.c $(LDFLAGS)
+
+$(CONTROLLER): controller_000.c src/controller_000.c
+	$(CC) $(CFLAGS) -o $@ controller_000.c $(LDFLAGS)
+
+run-agent: $(AGENT)
+	./$(AGENT)
+
+run-controller: $(CONTROLLER)
+	./$(CONTROLLER) 127.0.0.1
+
+clean:
+	rm -f $(AGENT) $(CONTROLLER)

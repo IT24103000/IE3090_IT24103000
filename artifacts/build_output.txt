@@ -1,0 +1,3 @@
+rm -f agent_000 controller_000
+gcc -std=c11 -Wall -Wextra -Wpedantic -O2 -o agent_000 agent_000.c -pthread
+gcc -std=c11 -Wall -Wextra -Wpedantic -O2 -o controller_000 controller_000.c -pthread
